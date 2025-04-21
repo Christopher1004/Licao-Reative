@@ -1,0 +1,20 @@
+<h1>Add Produto</h1>
+<form action="/produtos/add" method="POST">
+    <div class="form-group">
+        <label for="nome">Produto</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+    </div>
+    <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="number" class="form-control" id="valor" name="valor" required>
+    </div>
+    <div class="form-group">
+        <label for="escolaId">Escolha a Escola</label>
+        <select class="form-control" id="escolaId" name="escolaId" required>
+            <% escolas.forEach(escola => { %>
+                <option value="<%= escola.id %>"><%= escola.nome %></option>
+            <% }) %>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

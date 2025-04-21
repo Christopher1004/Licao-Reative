@@ -5,6 +5,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
     });
+   Aluno.associate = (models) => {
+    Aluno.hasMany(models.Curso, {
+        foreignKey: "cursoId",
+        as: "curso"
+    })
+   }
 
     return Aluno;
 

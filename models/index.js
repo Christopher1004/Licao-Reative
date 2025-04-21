@@ -10,6 +10,12 @@ db.Categoria = require("./categoria")(sequelize, DataTypes);
 db.Professor = require("./professor")(sequelize, DataTypes);
 db.Aluno = require("./aluno")(sequelize, DataTypes);
 
+db.Produto = require("./produto")(sequelize, DataTypes)
+db.Professor = require("./professor")(sequelize, DataTypes)
+db.Curso = require("./curso")(sequelize, DataTypes)
+db.Escola = require("./escola")(sequelize, DataTypes)
+
+
 
 
 // Configurações de associações 

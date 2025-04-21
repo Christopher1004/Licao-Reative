@@ -1,3 +1,5 @@
+const { FOREIGNKEYS } = require("sequelize/lib/query-types");
+
 module.exports = (sequelize, DataTypes) => {
     const Categoria = sequelize.define("Categoria", {
         nome: {
@@ -5,7 +7,12 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
     });
-
+    Categoria.associate = (models) => {
+        Categoria.hasMany(models.Produto, {
+            foreignKey: "categoriaId",
+            as: "produtos",
+        })
+    }
     return Categoria;
 
 }; 
