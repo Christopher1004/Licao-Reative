@@ -14,7 +14,7 @@ const indexRouter = require("./routes/index");
 app.use("/", indexRouter);
 
 
-// Rotas para categorias
+// Rotas
 const categoriaRouter = require("./routes/categorias");
 app.use("/categorias", categoriaRouter);
 
@@ -23,6 +23,14 @@ app.use("/professores", professorRouter);
 
 const alunoRouter = require("./routes/alunos");
 app.use("/alunos", alunoRouter)
+
+const produtoRouter = require("./routes/produtos");
+app.use("/produtos", produtoRouter);
+const cursoRouter = require("./routes/cursos");
+app.use("/cursos", cursoRouter);
+const escolaRouter = require("./routes/escolas");
+app.use("/escolas", escolaRouter);
+
 
 // Iniciar o servidor e sincronizar com o banco de dados
 db.sequelize.sync().then(() => {

@@ -7,7 +7,7 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Valor</th>
-            <th>Escola</th>
+            <th>Categoria</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -17,7 +17,7 @@
                 <td><%= produto.id %></td>
                 <td><%= produto.nome %></td>
                 <td><%= produto.valor %></td>
-                <td><%= produto.Escola ? produto.Escola.nome : 'N/A' %></td>
+                <td><%= produto.Categoria ? produto.Categoria.nome : 'N/A' %></td>
                 <td>
                     <a href="/produtos/edit/<%= produto.id %>" class="btn btn-primary btn-sm">Editar</a>
                     <form action="/produtos/delete/<%= produto.id %>" method="POST" class="d-inline">
